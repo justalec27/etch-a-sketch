@@ -10,10 +10,11 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: white;
 }
 
 .container {
-    border: 5px solid black;
+    border: 5px solid #00B140;
     width: 732px;
     height: 732px;
     display: flex;
@@ -24,7 +25,7 @@ body{
 
 
 .square {
-    border: 1px solid black;
+    border: 1px solid #00B140;
     height: 43.75px;
     width: 43.75px;
     
@@ -34,9 +35,29 @@ body{
 button{
     font-size: 18px;
     font-weight: 900;
-    background-color: black;
+    background-color: #00B140;
     padding: 10px 20px;
     border: none;
     color: white;
 }
 
+.left-screen{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.explainer {
+    padding-bottom: 20px;
+    text-align: center;
+    width: 500px;
+    font-size: larger;
+}
+
+p{
+    padding: 50px;
+}
+span{
+    color: #00B140;
+    font-weight: bold;
+}

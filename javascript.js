@@ -21,7 +21,7 @@ function createGrid(input){
 
     colorBoxes.forEach((box) => {
     box.addEventListener("mouseover", (event) => {
-        box.style.backgroundColor = "black"
+        box.style.backgroundColor = random_rgba()
     })
 }) 
 }
@@ -37,6 +37,12 @@ function resizeBoxes(){
      })  
 }
 
+function random_rgba() {
+    let r = Math.floor ((Math.random()) * 255)
+    let b = Math.floor ((Math.random()) * 255)
+    let g = Math.floor ((Math.random()) * 255)
+    return `rgba(${r}, ${g}, ${b}, 1)`
+}
 
 
 const container = document.querySelector(".container")
@@ -54,7 +60,7 @@ let colorBoxes = document.querySelectorAll(".square")
 
 colorBoxes.forEach((box) => {
     box.addEventListener("mouseover", (event) => {
-        box.style.backgroundColor = "black"
+        box.style.backgroundColor = random_rgba()        
     })
 }) 
 
@@ -72,11 +78,13 @@ button.addEventListener("click", (event) => {
 
 //Hover effect on button
 button.addEventListener("mouseover", (event) => {
-  button.style.backgroundColor = "rgba(62, 184, 236, 1)";
+  button.style.backgroundColor = "black";
   button.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
 });
 button.addEventListener("mouseout", (event) => {
-  button.style.backgroundColor = "black";
+  button.style.backgroundColor = "#00B140";
   button.style.boxShadow = "none";
 });
 
+
+random_rgba()
