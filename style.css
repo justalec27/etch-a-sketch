@@ -4,19 +4,39 @@
     
 }
 
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .container {
     border: 5px solid black;
     width: 732px;
+    height: 732px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   
+    justify-content: center;
+    
 }
-
 
 
 .square {
     border: 1px solid black;
     height: 43.75px;
     width: 43.75px;
+    
+    
+}
+
+button{
+    font-size: 18px;
+    font-weight: 900;
+    background-color: black;
+    padding: 10px 20px;
+    border: none;
+    color: white;
 }
 
