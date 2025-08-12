@@ -6,24 +6,31 @@
     <title>Etch-a-Sketch</title>
     <script type="text/javascript" src="javascript.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="left-screen">
     <div class="explainer">
         <h1>Game: Etch-a-Sketch</h1>
-        <p> Have a try, move your mouse towards the tiny boxes on the right. 
-            You will see magic happen. The standard grid is 16x16 squares, however if you
-            want to change this, just click the big <span>green</span> button. 
+        <p> Have a try, try drawing inside the grid. 
+            The standard grid is 16x16 squares. Use the slider to change the size. 
             <br>
             <br>
             Have fun 😄
         </p>
- 
+          <input id="pi_input" type="range" min="2" max="99" step="1">
+          <p class="grid-size">Grid Size: <output id="value"></output> </p>
+
     </div>
     <div class="buttons">
-        <button class="change-grid">Change grid size</button>
+        <!-- <button class="change-grid">Change grid size</button> -->
         <button class="blackBtn">Black Mode</button>
         <button class="rainbowBtn">Rainbow Mode</button>
+        <button class="clearBtn">Clear</button>
+      
+        <!-- <button class="eraseBtn">Erase</button> -->
         <!-- <button class="clear-grid">Clear grid</button> -->
     </div>
 </div>

@@ -1,10 +1,10 @@
 /*
-TODO 1: Change hover to click
-TODO 2: Add button for black color
-TODO 3: Add button for random color
-TODO 4: Add button to clear values
+TODO 1: Change hover to click DONE
+TODO 2: Add button for black color DONE
+TODO 3: Add button for random color DONE
+TODO 4: Add button to clear values DONE
 TODO 5: Add slidebar for grid size
-TODO 6: Add button to change to white color
+TODO 6: Add button to change to white color skip
 
 
 *///
@@ -18,6 +18,21 @@ function checkLimit(input){
     }
     return input 
 }
+// Color the boxes
+function attachColoring() {
+  let colorBoxes = document.querySelectorAll(".square");
+
+  colorBoxes.forEach((box) => {
+    box.addEventListener("mousedown", () => isDragging = true);
+    box.addEventListener("mousemove", () => {
+      if (isDragging) { 
+        box.style.backgroundColor = blackColor ? "black" : random_rgba();
+      }
+    });
+    box.addEventListener("mouseup", () => isDragging = false);
+  });
+}
+
 
 //Create new grid
 function createGrid(input){
@@ -30,13 +45,7 @@ function createGrid(input){
     container.appendChild(squares);
     }
     //Change background color with hover
-    let colorBoxes = document.querySelectorAll(".square")
-
-    colorBoxes.forEach((box) => {
-    box.addEventListener("mouseover", (event) => {
-        box.style.backgroundColor = random_rgba()
-    })
-}) 
+    attachColoring(); // reattach events to new squares
 }
 
 
@@ -79,6 +88,7 @@ colorBoxes.forEach((box) => {
     })
 })
 
+
 colorBoxes.forEach((box) => {
     box.addEventListener("mousemove", (event) => {
         if (isDragging) { 
@@ -97,28 +107,6 @@ colorBoxes.forEach((box) => {
         }) 
     })
 
-//Popup screen when button clicked
-const button = document.querySelector("button")
-button.classList.add("button")
-button.addEventListener("click", (event) => {
-    userInput = Number(prompt("How many squares per side do you want? Enter a number from 1 to 99"))
-    userInput = checkLimit(userInput);
-    createGrid(userInput);
-    resizeBoxes()
-   
-})
-
-
-//Hover effect on button
-button.addEventListener("mouseover", (event) => {
-  button.style.backgroundColor = "black";
-  button.style.boxShadow = "10px 10px 15px rgba(0, 0, 0, 0.3)";
-});
-button.addEventListener("mouseout", (event) => {
-  button.style.backgroundColor = "#00B140";
-  button.style.boxShadow = "none";
-});
-
 // Click "Black Mode" button to change color to black
 const blackBtn = document.querySelector(".blackBtn")
 blackBtn.addEventListener("click", (event) => {
@@ -134,9 +122,23 @@ rainbowBtn.addEventListener("click", (event) => {
 // Click "Clear" button to clear the screen
 const clearBtn = document.querySelector(".clearBtn")
 clearBtn.addEventListener("click", (event) => {
-    colorBoxes.forEach((box) => {
-    box.style.backgroundColor = "white"
+     document.querySelectorAll(".square").forEach((box) => {
+     box.style.backgroundColor = "white";
 })
 })
+
+// Slide for Grid Size
+const value = document.querySelector("#value");
+const input = document.querySelector("#pi_input");
+value.textContent = `${input.value} x ${input.value}`
+input.addEventListener("input", (event) => {
+    const size = event.target.value;
+    value.textContent = `${size} x ${size}`;
+
+    userInput = size; // store current size globally
+    createGrid(userInput);
+    resizeBoxes();
+
+});
 
 random_rgba()

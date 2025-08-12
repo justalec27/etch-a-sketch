@@ -39,7 +39,11 @@ button{
     padding: 10px 20px;
     border: none;
     color: white;
+    cursor: pointer;
+    border-radius: 20px;
 }
+
+
 
 .left-screen{
     display: flex;
@@ -57,7 +61,36 @@ button{
 p{
     padding: 50px;
 }
-span{
-    color: #00B140;
-    font-weight: bold;
+
+.blackBtn {
+    background-color: black;
+}
+
+.rainbowBtn {
+     background: linear-gradient(
+        90deg,
+        rgb(229, 87, 87) 0%,
+        rgb(232, 176, 92) 10%,
+        rgb(205, 215, 68) 20%,
+        rgb(121, 208, 118) 30%,
+        rgb(90, 220, 218) 40%,
+        rgb(90, 199, 216) 50%,
+        rgb(90, 145, 207) 60%,
+        rgb(145, 102, 231) 70%,
+        rgb(190, 84, 228) 80%,
+        rgb(226, 86, 207) 90%,
+        rgb(225, 72, 72) 100%
+    );
+}
+
+.clearBtn {
+    background: linear-gradient(rgb(0, 0, 0), rgb(159, 157, 157));
+}
+
+button:hover {
+    background: #00B140;
+}
+
+.grid-size {
+    margin-top: -50px;
 }
