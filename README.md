@@ -3,7 +3,7 @@ A browser-based Etch-a-Sketch style drawing tool
 
 ##  Live Demo
 Experience the app at:  
-[https://justalec27.github.io/calculator/](https://justalec27.github.io/calculator/)
+[https://justalec27.github.io/etch-a-sketch//](https://justalec27.github.io/etch-a-sketch//)
 
 ## Features
 - Rainbow coloring
