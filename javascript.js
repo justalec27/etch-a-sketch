@@ -1,3 +1,16 @@
+/*
+TODO 1: Change hover to click
+TODO 2: Add button for black color
+TODO 3: Add button for random color
+TODO 4: Add button to clear values
+TODO 5: Add slidebar for grid size
+TODO 6: Add button to change to white color
+
+
+*///
+
+
+
 function checkLimit(input){
     while (input >= 100 || input < 1){
         alert("The number should be less than 100.");
@@ -56,13 +69,28 @@ for ( let i = 0 ; i < 256 ; i++){
 
 
 //Change background color with hover
-let colorBoxes = document.querySelectorAll(".square")
+let colorBoxes = document.querySelectorAll(".square");
+let isDragging = false;
 
 colorBoxes.forEach((box) => {
-    box.addEventListener("mouseover", (event) => {
-        box.style.backgroundColor = random_rgba()        
+    box.addEventListener("mousedown", (event) => {
+    isDragging = true
+    })
+})
+
+colorBoxes.forEach((box) => {
+    box.addEventListener("mousemove", (event) => {
+        if (isDragging) {
+        box.style.backgroundColor = random_rgba()
+        } 
     })
 }) 
+
+colorBoxes.forEach((box) => {
+    box.addEventListener("mouseup", (event) => {
+        isDragging = false
+        }) 
+    })
 
 //Popup screen when button clicked
 const button = document.querySelector("button")
