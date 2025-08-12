@@ -19,7 +19,7 @@ body{
     height: 732px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;    
     
 }
 
@@ -56,6 +56,7 @@ button{
     text-align: center;
     width: 500px;
     font-size: larger;
+    font-family: "Gorditas", serif;
 }
 
 p{
@@ -93,4 +94,5 @@ button:hover {
 
 .grid-size {
     margin-top: -50px;
+    margin-bottom: -50px;
 }
