@@ -71,6 +71,7 @@ for ( let i = 0 ; i < 256 ; i++){
 //Change background color with hover
 let colorBoxes = document.querySelectorAll(".square");
 let isDragging = false;
+let blackColor = false
 
 colorBoxes.forEach((box) => {
     box.addEventListener("mousedown", (event) => {
@@ -80,9 +81,13 @@ colorBoxes.forEach((box) => {
 
 colorBoxes.forEach((box) => {
     box.addEventListener("mousemove", (event) => {
-        if (isDragging) {
-        box.style.backgroundColor = random_rgba()
-        } 
+        if (isDragging) { 
+            if (blackColor === false) {
+             box.style.backgroundColor = random_rgba();
+            } else {
+             box.style.backgroundColor = "black"
+            }
+        }
     })
 }) 
 
@@ -114,5 +119,24 @@ button.addEventListener("mouseout", (event) => {
   button.style.boxShadow = "none";
 });
 
+// Click "Black Mode" button to change color to black
+const blackBtn = document.querySelector(".blackBtn")
+blackBtn.addEventListener("click", (event) => {
+     blackColor = true
+})
+
+// Click "Rainbow Mode" button to change color to rainbow
+const rainbowBtn = document.querySelector(".rainbowBtn")
+rainbowBtn.addEventListener("click", (event) => {
+     blackColor = false
+})
+
+// Click "Clear" button to clear the screen
+const clearBtn = document.querySelector(".clearBtn")
+clearBtn.addEventListener("click", (event) => {
+    colorBoxes.forEach((box) => {
+    box.style.backgroundColor = "white"
+})
+})
 
 random_rgba()
