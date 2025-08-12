@@ -11,31 +11,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="left-screen">
-    <div class="explainer">
-        <h1>Game: Etch-a-Sketch</h1>
-        <p> Have a try, try drawing inside the grid. 
-            The standard grid is 16x16 squares. Use the slider to change the size. 
-            <br>
-            <br>
-            Have fun 😄
-        </p>
-          <input id="pi_input" type="range" min="2" max="99" step="1">
-          <p class="grid-size">Grid Size: <output id="value"></output> </p>
+    <div class="main-wrapper">   
+    <div class="left-screen">
+        <div class="explainer">
+            <h1>Game: Etch-a-Sketch</h1>
+            <p> Have a try, try drawing inside the grid. 
+                The standard grid is 16x16 squares. Use the slider to change the size. 
+                <br>
+                <br>
+                Have fun 😄
+            </p>
+            <input id="pi_input" type="range" min="2" max="99" step="1">
+            <p class="grid-size">Grid Size: <output id="value"></output> </p>
 
+        </div>
+        <div class="buttons">
+            <!-- <button class="change-grid">Change grid size</button> -->
+            <button class="blackBtn">Black Mode</button>
+            <button class="rainbowBtn">Rainbow Mode</button>
+            <button class="clearBtn">Clear</button>
+        
+            <!-- <button class="eraseBtn">Erase</button> -->
+            <!-- <button class="clear-grid">Clear grid</button> -->
+        </div>
     </div>
-    <div class="buttons">
-        <!-- <button class="change-grid">Change grid size</button> -->
-        <button class="blackBtn">Black Mode</button>
-        <button class="rainbowBtn">Rainbow Mode</button>
-        <button class="clearBtn">Clear</button>
-      
-        <!-- <button class="eraseBtn">Erase</button> -->
-        <!-- <button class="clear-grid">Clear grid</button> -->
+    <div class="container">
     </div>
-</div>
-<div class="container">
-</div>
+    </div> 
+
+<footer>
+    <p>Design by Alec Qiu</p>
+</footer>
     
 </body>
 </html>
